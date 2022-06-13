@@ -6,4 +6,3 @@ def hello(friend_name):
     hello_string = "Hello, " + str(friend_name) + "!"
     return hello_string
 
-
