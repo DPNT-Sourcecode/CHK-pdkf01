@@ -15,16 +15,16 @@ def totalValue(basket):
         if item == "D":
             total = total + orderDict[item] * 15
         if item == "A":
-            if item < 3:
+            if orderDict[item] < 3:
                 total = total + orderDict[item] * 50
-            elif item >= 3:
+            elif orderDict[item] >= 3:
                 orderDict[item] = orderDict[item] - 3
                 total = total + 130
                 total = total + (orderDict[item] * 50)
         if item == "B":
-            if item < 2:
+            if orderDict[item] < 2:
                 total = total + (orderDict[item] * 50)
-            elif item >= 2:
+            elif orderDict[item] >= 2:
                 orderDict[item] = orderDict[item] - 2
                 total = total + 130
                 total = total + (orderDict[item] * 30)
@@ -37,4 +37,5 @@ def checkout(skus):
     else:
         finalPrice = -1
     return finalPrice
+
 
