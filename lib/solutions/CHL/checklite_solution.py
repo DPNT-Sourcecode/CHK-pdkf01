@@ -15,11 +15,13 @@ def totalValue(basket):
             if basket[i] =="D":
                 total+=15
         elif basket[i] == "3" or "5":
-            if basket[i] == 
+            if basket[i] == 3
+
 
 
 def checklite(skus):
     if skus == "A"
+
 
 
 
