@@ -4,10 +4,10 @@
 # skus = unicode string
 
 def recursionForB(orderNumber, total):
-    if orderNumber>= 2:
+    if orderNumber >= 2:
 
         total = total + 45
-        return recursionForB(orderNumber-2)
+        return recursionForB(orderNumber-2, total)
     elif orderNumber < 2:
         total = total + (orderNumber * 30)
         return total
@@ -38,8 +38,7 @@ def totalValue(basket):
             if orderDict[item] < 2:
                 total = total + (orderDict[item] * 30)
             elif orderDict[item] >= 2:
-                x = total
-                recursionForB(orderDict[item], x)
+                recursionForB(orderDict[item], total)
                 # orderDict[item] = orderDict[item] - 2
                 # total = total + 45
                 # total = total + (orderDict[item] * 30)
@@ -52,7 +51,3 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
-
-
-
-
