@@ -6,4 +6,3 @@ class TestSum():
         assert checkout_solution.checkout("Temi") == "Hello, Temi!"
         assert checkout_solution.checkout("") == "Hello, !"
         assert checkout_solution.checkout("Queen") == "Hello, Queen!"
-
