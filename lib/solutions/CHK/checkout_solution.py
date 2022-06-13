@@ -38,7 +38,7 @@ def totalValue(basket):
             if orderDict[item] < 2:
                 total = total + (orderDict[item] * 30)
             elif orderDict[item] >= 2:
-                recursionForB(orderDict[item], total)
+                total = recursionForB(orderDict[item], total)
                 # orderDict[item] = orderDict[item] - 2
                 # total = total + 45
                 # total = total + (orderDict[item] * 30)
@@ -51,3 +51,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
