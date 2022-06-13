@@ -10,6 +10,7 @@ def totalValue(basket):
         orderDict[product] = orderDict.get(product) + 1
 
     for item in orderDict:
+        item = item.upper()
         if item == "C":
             total = total + orderDict[item] * 20
         if item == "D":
@@ -31,12 +32,12 @@ def totalValue(basket):
     return total
 
 def checkout(skus):
-
+    finalPrice = -1
     if type(skus) == str:
         finalPrice = totalValue(skus)
-    elif type(skus) != str:
-        finalPrice = -1
+
     return finalPrice
+
 
 
 
