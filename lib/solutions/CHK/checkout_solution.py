@@ -12,9 +12,12 @@ def recursionForB(orderNumber, total):
         return total
 
 def recursionForA(orderNumber, total):
-    if orderNumber >= 3:
+    if orderNumber >= 5:
+        total = total + 200
+        return recursionForA(orderNumber - 5, total)
+    elif orderNumber >= 3:
         total = total + 130
-        return recursionForA(orderNumber-3, total)
+        return recursionForA(orderNumber - 3, total)
     elif orderNumber < 3:
         total = total + (orderNumber * 50)
         return total
@@ -31,7 +34,7 @@ def recursionForE(orderNumber, extraNumberOfB):
 def totalValue(basket):
     total = 0
 
-    orderDict = {"A":0, "B":0, "C":0, "D":0, "E",0}
+    orderDict = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0}
     for i in range(len(basket)):
         product = str(basket[i])
         orderDict[product] = orderDict.get(product) + 1
@@ -41,9 +44,9 @@ def totalValue(basket):
         # item = item.upper()
         if item == "E":
             total = total + orderDict[item] * 40
-            QuantityB = 0
-            extraQuantityB = recursionForE(orderDict[item], QuantityB)
-            orderDict["E"] = orderDict.get("E") + extraQuantityB
+            quantity_b = 0
+            extra_quantity_b = recursionForE(orderDict[item], quantity_b)
+            orderDict["E"] = orderDict.get("E") + extra_quantity_b
 
 
         if item == "C":
@@ -74,5 +77,3 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
-
-
