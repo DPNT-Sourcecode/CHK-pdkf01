@@ -4,6 +4,8 @@ from solutions.CHK import checkout_solution
 class TestSum():
     def test_sum(self):
         assert checkout_solution.checkout("BC") == 50
+        assert checkout_solution.checkout("") == -1
+        assert checkout_solution.checkout("cc") == -1
         assert checkout_solution.checkout("AAA") == 130
         assert checkout_solution.checkout("C") == 20
         assert checkout_solution.checkout("D") == 15
