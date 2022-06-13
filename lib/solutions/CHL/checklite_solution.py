@@ -2,5 +2,9 @@
 
 # noinspection PyUnusedLocal
 # skus = unicode string
+def totalValue(basket):
+
+
 def checklite(skus):
-    raise NotImplementedError()
+    if skus == "A"
+
