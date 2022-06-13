@@ -9,15 +9,18 @@ def totalValue(basket):
             if basket[i] =="A":
                 total+=50
             if basket[i] =="B":
-                total+=50
+                total+=30
             if basket[i] =="C":
-                total+=50
+                total+=20
             if basket[i] =="D":
-                total+=50
+                total+=15
+        elif basket[i] == "3" or "5":
+            if basket[i] == 
 
 
 def checklite(skus):
     if skus == "A"
+
 
 
 
