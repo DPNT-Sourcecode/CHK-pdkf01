@@ -4,8 +4,11 @@
 # skus = unicode string
 def totalValue(basket):
     total = 0
-    orderDict = {"A":0, }
+    orderDict = {"A":0, "B":0, "C":0, "D":0}
     for i in range(len(basket)):
+        if basket[i] == "A":
+            x = orderDict.get("A") + 50
+            orderDict =
         # if basket[i] == "A" or "B" or "C" or "D":
         #     if basket[i] =="A":
         #         total+=50
@@ -22,6 +25,7 @@ def totalValue(basket):
 
 def checklite(skus):
     if skus == "A"
+
 
 
 
