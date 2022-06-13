@@ -22,7 +22,7 @@ def recursionForA(orderNumber, total):
 def totalValue(basket):
     total = 0
 
-    orderDict = {"A":0, "B":0, "C":0, "D":0}
+    orderDict = {"A":0, "B":0, "C":0, "D":0, "E",0}
     for i in range(len(basket)):
         product = str(basket[i])
         orderDict[product] = orderDict.get(product) + 1
@@ -44,6 +44,8 @@ def totalValue(basket):
                 total = total + (orderDict[item] * 30)
             elif orderDict[item] >= 2:
                 total = recursionForB(orderDict[item], total)
+        if item == "E"
+            
 
     return total
 
@@ -56,3 +58,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
