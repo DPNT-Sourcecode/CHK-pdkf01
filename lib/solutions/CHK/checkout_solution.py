@@ -47,9 +47,10 @@ def totalValue(basket):
 
 def checkout(skus):
     finalPrice = -1
-    if type(skus) == str or skus.isupper():
+    if type(skus) == str and skus.isupper():
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
