@@ -49,8 +49,8 @@ def totalValue(basket):
             if orderDict.get("B") > 0:
                 deduction = recursionForB(extra_quantity_b,0)
                 total = total - deduction
-            if orderDict.get("B") == 2:
-                total = total + 15
+                if orderDict.get("B") == 2:
+                    total = total + 15
 
 
         if item == "C":
@@ -79,4 +79,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
