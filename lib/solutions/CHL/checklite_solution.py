@@ -38,4 +38,3 @@ def checklite(skus):
     if type(skus) == str:
         finalPrice  = totalValue(skus)
     return finalPrice
-
