@@ -6,5 +6,3 @@ class TestSum():
         assert hello_solution.hello("Hello World") == "Hello, World!"
         assert hello_solution.hello("") == "Hello, World!"
         assert hello_solution.hello("Hi") == "Hello, World!"
-
-
