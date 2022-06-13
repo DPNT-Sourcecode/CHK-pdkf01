@@ -4,16 +4,16 @@ from solutions.CHK import checkout_solution
 class TestSum():
     def test_sum(self):
         assert checkout_solution.checkout("BC") == 50
-        assert hello_solution.hello("AAA") == 130
-        assert hello_solution.hello("C") == 20
-        assert hello_solution.hello("D") == 15
-        assert hello_solution.hello("A") == 50
-        assert hello_solution.hello("B") == 30
-        assert hello_solution.hello("BB") == 45
-        assert hello_solution.hello(855) == -1
-        assert hello_solution.hello("AAAB") == 160
-        assert hello_solution.hello(&) == -1
-        assert hello_solution.hello("BDDD") == 75
-        assert hello_solution.hello("AAABB") == 175
-        assert hello_solution.hello("BAAA") == 160
-        assert hello_solution.hello("BCCC") == 90
+        assert checkout_solution.checkout("AAA") == 130
+        assert checkout_solution.checkout("C") == 20
+        assert checkout_solution.checkout("D") == 15
+        assert checkout_solution.checkout("A") == 50
+        assert checkout_solution.checkout("B") == 30
+        assert checkout_solution.checkout("BB") == 45
+        assert checkout_solution.checkout(855) == -1
+        assert checkout_solution.checkout("AAAB") == 160
+        assert checkout_solution.checkout(100) == -1
+        assert checkout_solution.checkout("BDDD") == 75
+        assert checkout_solution.checkout("AAABB") == 175
+        assert checkout_solution.checkout("BAAA") == 160
+        assert checkout_solution.checkout("BCCC") == 90
