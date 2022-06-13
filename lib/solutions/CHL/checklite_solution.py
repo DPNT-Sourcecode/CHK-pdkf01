@@ -8,21 +8,34 @@ def totalValue(basket):
     for i in range(len(basket)):
         product = str(basket[i])
         orderDict[product] = orderDict.get(product) + 1
-    for i
 
-        # if basket[i] == "A" or "B" or "C" or "D":
-        #     if basket[i] =="A":
-        #         total+=50
-        #     if basket[i] =="B":
-        #         total+=30
-        #     if basket[i] =="C":
-        #         total+=20
-        #     if basket[i] =="D":
-        #         total+=15
-        # elif basket[i] == "3" or "5":
-        #     if basket[i] == 3
+    for item in orderDict:
+        if item == "C":
+            total = total + orderDict[item] * 20
+        if item == "D":
+            total = total + orderDict[item] * 15
+        if item == "A":
+            if item < 3:
+                total = total + orderDict[item] * 50
+            elif item >= 3:
+                orderDict[item] = orderDict[item] - 3
+                total = total + 130
+                total = total + (orderDict[item] * 50)
+        if item == "B":
+            if item < 2:
+                total = total + (orderDict[item] * 50)
+            elif item >= 2:
+                orderDict[item] = orderDict[item] - 2
+                total = total + 130
+                total = total + (orderDict[item] * 30)
+    return total
+
 
 
 
 def checklite(skus):
-    if skus == "A"
+    finalPrice = -1
+    if type(skus) == str:
+        finalPrice  = totalValue(skus)
+    return finalPrice
+
