@@ -7,5 +7,3 @@ class TestSum():
         assert sum_solution.compute(-5, -6) == -11
         assert sum_solution.compute(2, -6) == -4
         assert sum_solution.compute(50, 70) == 120
-
-
