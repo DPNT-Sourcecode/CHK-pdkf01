@@ -26,12 +26,3 @@ def totalValue(basket):
 
 def checklite(skus):
     if skus == "A"
-
-
-
-
-
-
-
-
-
