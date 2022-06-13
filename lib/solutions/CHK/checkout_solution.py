@@ -27,7 +27,7 @@ def recursionForE(orderNumber, extraNumberOfB):
         extraNumberOfB = extraNumberOfB + 1
         return recursionForE (orderNumber - 2, extraNumberOfB )
     elif orderNumber < 2:
-        extraNumberOfB = orderNumber
+
         return extraNumberOfB
 
 
@@ -77,4 +77,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
