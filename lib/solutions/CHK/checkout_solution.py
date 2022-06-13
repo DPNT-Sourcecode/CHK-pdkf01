@@ -34,8 +34,9 @@ def checkout(skus):
 
     if type(skus) == str:
         finalPrice = totalValue(skus)
-    else:
+    elif type(skus) != str:
         finalPrice = -1
     return finalPrice
+
 
 
