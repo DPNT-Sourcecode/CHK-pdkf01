@@ -50,8 +50,10 @@ def totalValue(basket):
             if orderDict.get("B")!= 0:
 
             #orderDict["B"] = orderDict.get("B") - extra_quantity_b
-
-                total = total - extra_quantity_b * 30
+                if extra_quantity_b == 2:
+                    total = total - 45
+                elif extra_quantity_b ==1:
+                    total = total - 30
 
 
         if item == "C":
@@ -82,6 +84,7 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
 
