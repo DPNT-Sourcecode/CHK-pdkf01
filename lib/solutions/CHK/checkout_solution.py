@@ -77,6 +77,8 @@ def totalValue(basket):
                 total = total + (orderB * 30)
             elif orderB >= 2:
                 total = recursionForB(orderB, total)
+
+        if 
     return total
 
 
@@ -88,4 +90,3 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
-
