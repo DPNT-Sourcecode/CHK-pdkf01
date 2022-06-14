@@ -102,7 +102,3 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
-
-
-
-
