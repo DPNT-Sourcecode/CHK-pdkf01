@@ -46,7 +46,12 @@ def totalValue(basket):
         if item == "E":
             total = total + orderDict[item] * 40
             quantity_b = 0
-            extra_quantity_b = recursionForE(orderDict[item], quantity_b)
+            x = orderDict[item]
+            while x >= 2:
+                if x >= 2:
+                    x = x - 2
+                    extra_quantity_b = extra_quantity_b + 1
+            # extra_quantity_b = recursionForE(orderDict[item], quantity_b)
             # if orderDict.get("B") > 0:
             #     deduction = recursionForB(extra_quantity_b,0)
             #     total = total - deduction
@@ -83,5 +88,6 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
