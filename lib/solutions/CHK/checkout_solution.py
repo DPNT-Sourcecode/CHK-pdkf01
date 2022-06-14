@@ -40,6 +40,7 @@ def totalValue(basket):
         orderDict[product] = orderDict.get(product) + 1
 
     extra_quantity_b = 0
+    freeF = 0
     for item in orderDict:
         # item = item.upper()
 
@@ -79,7 +80,15 @@ def totalValue(basket):
                 total = recursionForB(orderB, total)
 
         if item == "F":
-            
+            orderF = orderDict[item]
+            if orderF < 2:
+                total = total + (orderF * 10)
+            else:
+                while orderF >= 2:
+                    orderF = orderF - 2
+                    freeF = freeF + 1
+                total = total + (orderDict[item] - freeF) * 10
+
 
 
     return total
@@ -93,5 +102,6 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
