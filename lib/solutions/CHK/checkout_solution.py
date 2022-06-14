@@ -78,6 +78,9 @@ def totalValue(basket):
             elif orderB >= 2:
                 total = recursionForB(orderB, total)
 
+        if item == "F":
+            
+
 
     return total
 
@@ -90,4 +93,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
