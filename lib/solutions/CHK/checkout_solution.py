@@ -177,6 +177,9 @@ def totalValue(basket):
                     orderU = orderU - 3
                     freeU = freeU + 1
                 total = total + (orderDict[item] - freeU) * 40
+        else:
+            orderOther = orderDict[item]
+            total = total + (orderOther * itemPriceDict[item])
 
     return total
 
@@ -189,4 +192,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
