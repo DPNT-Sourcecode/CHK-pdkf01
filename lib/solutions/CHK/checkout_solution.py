@@ -32,6 +32,7 @@ def totalValue(basket):
     for alphabet in alphabets:
         orderDict[alphabet] = 0
     # orderDict = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "F": 0}
+    itemPriceDict = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "F": 0}
     for i in range(len(basket)):
         product = str(basket[i])
         orderDict[product] = orderDict.get(product) + 1
@@ -94,6 +95,7 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
 
