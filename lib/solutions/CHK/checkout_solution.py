@@ -55,7 +55,7 @@ def totalValue(basket):
 
 
 
-        if item == "C":
+        if item == "C" or "G":
             total = total + orderDict[item] * 20
         if item == "D":
             total = total + orderDict[item] * 15
@@ -102,4 +102,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
