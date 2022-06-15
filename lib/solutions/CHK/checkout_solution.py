@@ -129,16 +129,16 @@ def totalValue(basket):
                     orderF = orderF - 2
                     freeF = freeF + 1
                 total = total + (orderDict[item] - freeF) * 10
-                
+
         if item == "U":
             orderU = orderDict[item]
-            if orderU <= 2:
-                total = total + (orderU * 10)
+            if orderU <= 3:
+                total = total + (orderU * 40)
             else:
-                while orderU > 2:
-                    orderU = orderU - 2
+                while orderU > 3:
+                    orderU = orderU - 3
                     freeU = freeU + 1
-                total = total + (orderDict[item] - freeU) * 10
+                total = total + (orderDict[item] - freeU) * 40
 
     return total
 
@@ -151,3 +151,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
