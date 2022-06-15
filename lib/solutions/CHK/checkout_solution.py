@@ -41,6 +41,16 @@ def recursionForH (orderNumber, total):
         total = total + (orderNumber * 10)
         return total
 
+def recursionForHandV (orderNumber, total, lowerDiscount, upperDiscount, lowerOrderNumber, UpperOrderNumber, unitPrice):
+    if orderNumber >= UpperOrderNumber:
+        total = total + upperDiscount
+        return recursionForA(orderNumber - UpperOrderNumber, total)
+    elif orderNumber >= lowerOrderNumber:
+        total = total + lowerDiscount
+        return recursionForA(orderNumber - lowerOrderNumber, total)
+    elif orderNumber < lowerOrderNumber:
+        total = total + (orderNumber * unitPrice)
+        return total
 
 
 
@@ -86,6 +96,11 @@ def totalValue(basket):
                 total = total + orderDict[item] * 10
             elif orderDict[item] >= 5:
                 total = recursionForH(orderDict[item], total)
+        if item == "V":
+            if orderDict[item] < 2:
+                total = total + orderDict[item] * 50
+            elif orderDict[item] >= 2:
+                total = recursionForHandV(orderDict[item], total, 90, 130, 2, 3, 50)
 
         if item == "B":
             orderE = orderDict["E"]
@@ -100,6 +115,29 @@ def totalValue(basket):
                 total = total + (orderB * 30)
             elif orderB >= 2:
                 total = recursionForB(orderB, total)
+
+        if item == "M":
+            orderN = orderDict["N"]
+            while orderN >= 3:
+                if orderN >= 3:
+                    orderN = orderN - 3
+                    extra_quantity_n = extra_quantity_n + 1
+            while extra_quantity_n > orderDict[item]:
+                extra_quantity_n = extra_quantity_n - 1
+            orderM = orderDict[item] - extra_quantity_n
+            total = total + (orderM * 40)
+
+        if item == "Q":
+            orderR = orderDict["R"]
+            while orderR >= 3:
+                if orderR >= 3:
+                    orderR = orderR - 3
+                    extra_quantity_r = extra_quantity_r + 1
+            while extra_quantity_r > orderDict[item]:
+                extra_quantity_r = extra_quantity_r - 1
+            orderQ = orderDict[item] - extra_quantity_r
+            total = total + (orderQ * 50)
+
         if item == "K" or "P" or "Q":
             if item == "K":
                 orderK = orderDict["K"]
@@ -151,3 +189,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
