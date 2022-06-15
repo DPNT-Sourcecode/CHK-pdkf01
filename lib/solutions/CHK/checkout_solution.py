@@ -79,6 +79,13 @@ def totalValue(basket):
     for item in orderDict:
         # item = item.upper()
 
+        if item == "A":
+            x = orderDict[item]
+            if x < 3:
+                total = total + (x * 50)
+            elif x >= 3:
+                total = recursionForA(x, total)
+
         if item == "E":
             total = total + orderDict[item] * 40
 
@@ -90,12 +97,7 @@ def totalValue(basket):
         if item == "D":
             total = total + orderDict[item] * 15
 
-        if item == "A":
-            x = orderDict[item]
-            if x < 3:
-                total = total + (x * 50) -20
-            elif x >= 3:
-                total = recursionForA(x, total)
+
 
         if item == "H":
             if orderDict[item] < 5:
@@ -198,3 +200,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
