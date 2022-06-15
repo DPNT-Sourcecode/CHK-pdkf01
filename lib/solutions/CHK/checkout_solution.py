@@ -102,7 +102,23 @@ def totalValue(basket):
                 total = recursionForB(orderB, total)
         if item == "K" or "P" or "Q":
             if item == "K":
-                
+                orderK = orderDict["K"]
+                if orderDict["K"] < 2:
+                    total = total + (orderDict["K"] * 80)
+                elif orderDict["K"] >= 2:
+                    total = recursionForKPQ(orderK, total, 2, 150, 80)
+            if item == "P":
+                orderP = orderDict["P"]
+                if orderDict["P"] < 5:
+                    total = total + (orderDict["P"] * 50)
+                elif orderDict["P"] >= 5:
+                    total = recursionForKPQ(orderP, total, 5, 200, 50)
+            if item == "Q":
+                orderQ = orderDict["Q"]
+                if orderDict["Q"] < 3:
+                    total = total + (orderDict["Q"] * 30)
+                elif orderDict["Q"] >= 3:
+                    total = recursionForKPQ(orderQ, total, 3, 80, 30)
 
         if item == "F":
             orderF = orderDict[item]
@@ -127,3 +143,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
