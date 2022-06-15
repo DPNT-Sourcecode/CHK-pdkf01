@@ -11,6 +11,14 @@ def recursionForB(orderNumber, total):
         total = total + (orderNumber * 30)
         return total
 
+def recursionForKPQ(orderNumber, total, quantity, bulkAmount, unitAmount):
+    if orderNumber >= quantity:
+        total = total + bulkAmount
+        return recursionForKPQ(orderNumber - quantity, total, quantity, bulkAmount, unitAmount)
+    elif orderNumber < quantity:
+        total = total + (orderNumber * unitAmount)
+        return total
+
 def recursionForA(orderNumber, total):
     if orderNumber >= 5:
         total = total + 200
@@ -20,6 +28,17 @@ def recursionForA(orderNumber, total):
         return recursionForA(orderNumber - 3, total)
     elif orderNumber < 3:
         total = total + (orderNumber * 50)
+        return total
+
+def recursionForH (orderNumber, total):
+    if orderNumber >= 10:
+        total = total + 80
+        return recursionForA(orderNumber - 10, total)
+    elif orderNumber >= 5:
+        total = total + 45
+        return recursionForA(orderNumber - 5, total)
+    elif orderNumber < 5:
+        total = total + (orderNumber * 10)
         return total
 
 
@@ -62,11 +81,11 @@ def totalValue(basket):
             elif orderDict[item] >= 3:
                 total = recursionForA(orderDict[item], total)
 
-        if item == "A":
-            if orderDict[item] < 3:
-                total = total + orderDict[item] * 50
-            elif orderDict[item] >= 3:
-                total = recursionForA(orderDict[item], total)
+        if item == "H":
+            if orderDict[item] < 5:
+                total = total + orderDict[item] * 10
+            elif orderDict[item] >= 5:
+                total = recursionForH(orderDict[item], total)
 
         if item == "B":
             orderE = orderDict["E"]
@@ -81,6 +100,9 @@ def totalValue(basket):
                 total = total + (orderB * 30)
             elif orderB >= 2:
                 total = recursionForB(orderB, total)
+        if item == "K" or "P" or "Q":
+            if item == "K":
+                
 
         if item == "F":
             orderF = orderDict[item]
@@ -105,3 +127,4 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
