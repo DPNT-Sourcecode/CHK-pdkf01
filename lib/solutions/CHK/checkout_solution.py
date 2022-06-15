@@ -186,7 +186,7 @@ def totalValue(basket):
         #     orderOther = orderDict[item]
         #     total = total + (orderOther * itemPriceDict[item])
 
-    return total
+    return total-20
 
 
 def checkout(skus):
@@ -197,4 +197,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
