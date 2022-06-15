@@ -73,6 +73,7 @@ def totalValue(basket):
     extra_quantity_r = 0
     extra_quantity_n  = 0
     freeF = 0
+    freeU = 0
     for item in orderDict:
         # item = item.upper()
 
@@ -194,6 +195,7 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
 
