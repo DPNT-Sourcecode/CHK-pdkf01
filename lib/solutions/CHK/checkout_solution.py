@@ -78,7 +78,7 @@ def totalValue(basket):
     freeU = 0
     for item in orderDict:
         # item = item.upper()
-
+        total = 0
         if item == "E":
             total = total + orderDict[item] * 40
 
@@ -198,6 +198,7 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
 
 
