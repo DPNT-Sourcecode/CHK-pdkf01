@@ -2,7 +2,7 @@
 
 # noinspection PyUnusedLocal
 # skus = unicode string
-
+import string
 def recursionForB(orderNumber, total):
     if orderNumber >= 2:
         total = total + 45
@@ -27,7 +27,10 @@ def recursionForA(orderNumber, total):
 
 def totalValue(basket):
     total = 0
-
+    orderDict = {}
+    alphabets = list(string.ascii_uppercase)
+    for alphabet in alphabets:
+        
     orderDict = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "F": 0}
     for i in range(len(basket)):
         product = str(basket[i])
@@ -91,4 +94,5 @@ def checkout(skus):
         finalPrice = totalValue(skus)
 
     return finalPrice
+
 
